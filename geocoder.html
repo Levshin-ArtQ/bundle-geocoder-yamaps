@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Геокодирование адресов</title>
+  <link rel="stylesheet" href="src/scss/styles.css">
+  <script>
+    // Получаем API-ключ из localStorage
+    const apiKey = localStorage.getItem("yandex-api-key");
+    if (!apiKey) {
+      // Если ключ отсутствует, возвращаем на страницу ввода
+      window.location.href = "index.html";
+    }
+    // Динамически загружаем API Яндекс.Карт
+    document.write(
+      `<script src="https://api-maps.yandex.ru/2.1/?apikey=${apiKey}&lang=ru_RU"><\/script>`
+    );
+  </script>
+  <script>
+    document.getElementById("logout-btn").addEventListener("click", function () {
+      const apiKey = document.getElementById("api-key").value;
+      if (apiKey) {
+        // Сохраняем ключ в localStorage и переходим на страницу обработки
+        localStorage.removeItem("yandex-api-key");
+        window.location.href = "index.html";
+      } 
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Геокодирование адресов</h1>
+    <button class="logout-btn">Выйти</button>
+    <div class="input-section">
+      <label for="addresses">Введите адреса (один адрес на строку):</label>
+      <textarea id="addresses" rows="10" placeholder="Вставьте список адресов"></textarea>
+    </div>
+    <button id="process-btn">Обработать адреса</button>
+    <div class="output-section">
+      <h2>Результаты:</h2>
+      <table id="results-table">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Адрес</th>
+            <th>Широта</th>
+            <th>Долгота</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Результаты будут здесь -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="src/js/geocoder.js"></script>
+</body>
+</html>
