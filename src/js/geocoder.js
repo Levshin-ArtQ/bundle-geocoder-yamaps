@@ -5,6 +5,13 @@ document.getElementById("process-btn").addEventListener("click", function () {
   // Очистка предыдущих результатов
   resultsTableBody.innerHTML = "";
 
+  // Проверка подключения API
+  if (typeof ymaps === 'undefined') {
+    alert("Не удалось подключить API Яндекс.Карт. Пожалуйста, повторите попытку.");
+    localStorage.removeItem("yandex-api-key");
+    window.location.href = "index.html";
+  } 
+
   // Проверка наличия адресов
   if (addresses.length === 0) {
     alert("Пожалуйста, введите хотя бы один адрес.");
@@ -48,4 +55,13 @@ document.getElementById("process-btn").addEventListener("click", function () {
       resultsTableBody.appendChild(row);
     });
   });
+
+});
+
+
+document.getElementById("logout-btn").addEventListener("click", function () {
+  
+  // Сохраняем ключ в localStorage и переходим на страницу обработки
+  localStorage.removeItem("yandex-api-key");
+  window.location.href = "index.html";
 });

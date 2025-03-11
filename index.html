@@ -12,9 +12,9 @@
     <h1>Введите API-ключ Яндекс.Карт</h1>
     <div class="input-section">
       <label for="api-key">API-ключ:</label>
-      <input type="text" id="api-key" placeholder="Введите ваш API-ключ">
+      <input type="password" id="api-key" placeholder="Введите ваш API-ключ" onkeypress="return event.key === 'Enter' ? document.getElementById('submit-btn').click() : true">
     </div>
-    <button id="submit-btn">Продолжить</button>
+    <button id="submit-btn" class="button">Продолжить</button>
   </div>
   <script>
     document.getElementById("submit-btn").addEventListener("click", function () {
