@@ -40,7 +40,6 @@ input[type="text"],
 input[type="password"],
 textarea {
   display: block;
-  /* width: 100%; */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -56,14 +55,15 @@ textarea {
   width: 100%;
   padding: 10px;
   background-color: #fc0;
-  color: #fff;
+  color: #000;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button:hover {
   background-color: #fa0;
 }
 
@@ -104,6 +104,36 @@ th {
   font-weight: bold;
 }
 
+/* Стили для справочной информации */
+.info-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.info-section h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.info-section a {
+  color: #fc0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.info-section a:hover {
+  text-decoration: underline;
+}
+
 /* Адаптивность */
 @media (max-width: 600px) {
   .container {
@@ -118,5 +148,13 @@ th {
   textarea,
   button {
     font-size: 14px;
+  }
+
+  .info-section {
+    padding: 15px;
+  }
+
+  .info-section h2 {
+    font-size: 18px;
   }
 }

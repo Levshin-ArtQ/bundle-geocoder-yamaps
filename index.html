@@ -15,6 +15,23 @@
       <input type="password" id="api-key" placeholder="Введите ваш API-ключ" onkeypress="return event.key === 'Enter' ? document.getElementById('submit-btn').click() : true">
     </div>
     <button id="submit-btn" class="button">Продолжить</button>
+
+    <!-- Справочная информация -->
+    <div class="info-section">
+      <h2>Как получить API-ключ?</h2>
+      <p>
+        Для работы приложения необходим API-ключ от Яндекс.Карт. Вы можете получить его бесплатно на 
+        <a href="https://developer.tech.yandex.ru/services/" target="_blank" rel="noopener noreferrer">странице разработчика Яндекс</a>.
+      </p>
+      <h2>О проекте</h2>
+      <p>
+        Это минималистичное веб-приложение для массового геокодирования адресов с использованием API Яндекс.Карт. Оно позволяет быстро получить географические координаты (широту и долготу) для большого списка адресов.
+      </p>
+      <p>
+        Исходный код проекта доступен на 
+        <a href="https://github.com/Levshin-ArtQ/bundle-geocoder-yamaps" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      </p>
+    </div>
   </div>
   <script>
     document.getElementById("submit-btn").addEventListener("click", function () {
